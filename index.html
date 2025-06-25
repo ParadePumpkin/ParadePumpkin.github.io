@@ -1,34 +1,70 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Parade100_test</title>
-  <link rel="stylesheet" href="Parade.css">
-  <link href="https://fonts.cdnfonts.com/css/public-pixel" rel="stylesheet">
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STAR ART GENERATOR</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+
+
 </head>
 
 <body>
-  <h1>Welcome to Macy's 100th Parade</h1>
 
-  <div id="frame">
-    <div id="background">
+  <h1>STAR ART GENERATOR</h1><br>
 
+  <div id="readme"
+    style="max-width: 700px; font-family: Arial, sans-serif; line-height: 1.6; font-size: 14px; padding: 1rem;">
+    <h3>⭐ Star Art Generator – Read Me</h3>
 
-      <img src="/Contents/Background.svg" alt="Parade Background" />
-      <div id="selector">
-        <div id="Bubble"><span class="Promptext">
-            Pop-up Events along the street  Never gonna give you up <br> never gonna let you down</span><br><br>
-          <img src="/Contents/exp.jpg">
-          </div>
+    <p>
+      This is a <strong>work-in-progress</strong> tool for generating animated star art keyframes.<br>
+      For support or feedback, please contact <a href="mailto:peilin.liao@macys.com">peilin.liao@macys.com</a>.
+    </p>
 
-      </div>
-    </div>
+    <br>
+    <h3>🔧 How It Works</h3>
+    <ul>
+      <li>This generator <strong>produces keyframes only</strong>. You can import the frames into any video editor
+        (e.g., After Effects, Premiere, DaVinci) to create a looping animation.</li>
+      <li><strong>"Preview Animation"</strong> lets you preview transitions between frames before download.</li>
+      <li><strong>"Download"</strong> exports all keyframes as <code>.png</code> images inside a ZIP file. Each frame
+        will exactly match the dimensions of your uploaded image.</li>
+    </ul>
 
+    <br>
+    <h3>⚠️ Performance Notice</h3>
+    <ul>
+      <li>Uploading <strong>large images</strong> and triggering "Animate Slider" may slow down or crash your browser.
+      </li>
+      <li><strong>Recommended image size for testing:</strong> <code>1920 × 1080 px</code></li>
+    </ul>
 
   </div>
 
-  <script src="./Parade.js"></script>
+
+  <div id="ui">
+
+    <label for="sampleSlider">Star Size: <span id="sliderValue">15</span></label>
+    <input type="range" id="sampleSlider" min="5" max="125" value="20" />
+
+    <button id="Randomize" class="button"> Create Variation of Current Size </button>
+    <button id="Animate" class="button"> Preview Animation</button>
+    <button id="Export" class="button">Export Keyframe ZIP</button>
+    <progress id="progressBar" value="0" max="1" style="width: 100%; display: none;"></progress>
+
+  </div>
+  <br>
+  <button class="upload">Upload your own Image</button>
+  <br>
+
+  <main id="canvas-container" class="canvas"></main>
 </body>
 
 </html>
