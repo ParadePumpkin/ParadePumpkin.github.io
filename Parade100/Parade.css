@@ -1,0 +1,223 @@
+body {
+    background-color: rgb(255, 255, 255);
+    width: 100vw;
+    height: 180vw;
+    font-family: 'MacysSans', sans-serif;
+}
+
+#startup {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 200vw;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: opacity 3s ease;
+    
+}
+
+#startup.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    /* Prevent interactions after fade */
+}
+
+#Loading{
+
+    position: absolute;
+    top:35vh;
+}
+
+
+
+@font-face {
+    font-family: 'MacysSans';
+    src: url('./Contents/MacysSans-Light.otf') format('opentype'),
+        url('./Contents/MacysSans-Micro.otf') format('opentype'),
+        url('./Contents/MacysSans.otf') format('opentype'),
+        url('./Contents/TT\ Ramillas\ Trial\ Regular.ttf') format('ttf');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+h1 {
+    text-align: center;
+    font-family: 'MacysSans', sans-serif;
+}
+
+
+
+#frame {
+    width: 80vw;
+    height: 180vw;
+    overflow: hidden;
+    position: relative;
+    border: 15px solid #d89c2d;
+    margin: 50px auto;
+    cursor: default;
+    user-select: none;
+    /* prevents text selection while dragging */
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: center center;
+    transition: transform 0.2s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#background img {
+    width: 80vw;
+    height: auto;
+    pointer-events: none;
+}
+
+#HSQ img {
+
+    position: absolute;
+    top: 70vw;
+    left: -50vw;
+    z-index: -10;
+    pointer-events: auto;
+}
+
+
+
+
+
+
+
+
+#MacyS {
+    position: absolute;
+    top: 25vh;
+    width: 150px;
+    height: 220px;
+    z-index: 10;
+    --star-size: 100px;
+
+    width: var(--star-size);
+    height: var(--star-size);
+    background: rgb(221, 23, 23);
+    clip-path: polygon(50% 0%,
+            61% 35%,
+            98% 35%,
+            68% 57%,
+            79% 91%,
+            50% 70%,
+            21% 91%,
+            32% 57%,
+            2% 35%,
+            39% 35%);
+
+
+}
+
+.star {
+    animation: pulseScale 1.5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* Define the animation keyframes */
+@keyframes pulseScale {
+
+    0%,
+    100% {
+        transform: scale(0.8)rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.2)rotate(90deg);
+    }
+}
+
+
+#Playground img{
+
+    position:absolute;
+    z-index:25;
+    width: 40px;
+    top: 110vw;
+    left: 50vw;
+
+}
+
+
+
+/*Below are balloon Styles*/
+
+
+
+#spiderman img {
+  position: absolute;
+  top: 96vw;
+  left: 5vw;
+  z-index: 15;
+  width: 150px;
+  transition: transform 0.3s ease;
+  pointer-events: auto;  
+}
+
+
+
+#Marshall img {
+  position: absolute;
+  top: 90vw;
+  right: 10vw;
+  z-index: 15;
+  width: 100px;
+  transition: transform 0.3s ease;
+  pointer-events: auto;  
+}
+
+
+
+.Balloon {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  cursor: pointer; /* optional: show pointer on hover */
+  /* keep z-index set per individual balloon */
+}
+
+.Balloon > img {
+  width: 150px; /* or whatever size you want */
+  transition: transform 0.3s ease;
+  transform-origin: center;
+  pointer-events: auto;
+}
+
+.Balloon > img:hover {
+  transform: scale(1.55);
+}
+
+.balloon-text {
+position: relative;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: 'MacysSans', sans-serif;
+  font-size: 0.1rem;
+  background: rgba(255, 224, 195, 0.95);
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  margin-top: 6px; /* spacing below image */
+  pointer-events: none;
+  user-select: none; 
+  z-index: 20;
+}
+
+.Balloon:hover .balloon-text {
+  opacity: 1;
+}
