@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pillar 1 Gallery</title>
+  <link rel="stylesheet" href="Pages.css">
+
+
+</head>
+
+
+
+<body>
+
+
+  <h1 style="text-align: center; margin-bottom: 24px;">Pillar 1 <br> Pre-Parrade Experiences</h1>
+
+<button id="add-button">Add Balloon</button>
+<button id="delete-button">Delete Selected Balloon</button>
+
+
+  <div class="gallery-container">
+
+    <!-- Pic gallery -->
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 1">
+      <div class="caption">Parade Playground</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 2">
+      <div class="caption">Immersive Exhibit</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 3">
+      <div class="caption">Parade Route Takeover</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 4">
+      <div class="caption">"Golden Star Swwepstakes"</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 4">
+      <div class="caption">NYC Landmarks Takeover</div>
+    </div>
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 4">
+      <div class="caption">Stoop Decorating Contest</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 4">
+      <div class="caption">Tiptoe's Holiday Film</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 4">
+      <div class="caption">Parade Documentary</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 4">
+      <div class="caption">Publishing Opportunities</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 4">
+      <div class="caption">Parade Stories Podcast</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 4">
+      <div class="caption">"Runaway Balloon" Videogame</div>
+    </div>
+
+
+
+    <div class="gallery-item">
+      <img src="Contents/header.png" alt="Photo 4">
+      <div class="caption">Collaborations</div>
+    </div>
+
+
+
+    <!-- Add more images as needed to reach 6 rows (24 images) -->
+
+  </div>
+
+  <div id="Navigator-Wrapper">
+
+
+    <a href="5Pillar.html"><button class="Navigator"> Previous </button></a>
+    <a href="index.html"><button class="Navigator"> To Homepage </button></a>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-btn">&times;</span>
+      <img id="modal-img" src="" alt="Enlarged">
+      <div id="modal-caption" class="caption"></div>
+    </div>
+  </div>
+  <script src="./Pages.js"></script>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDASZHawik5Ew2mrLP6PKzI5gzPghFIeWQ",
+      authDomain: "th-parade.firebaseapp.com",
+      projectId: "th-parade",
+      storageBucket: "th-parade.firebasestorage.app",
+      messagingSenderId: "161086496936",
+      appId: "1:161086496936:web:d9945dbf1b1c769aa8a29d",
+      measurementId: "G-5BEN7CG2SS"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+
+
+</body>
+
+</html>
