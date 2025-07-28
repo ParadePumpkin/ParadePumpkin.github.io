@@ -1,0 +1,270 @@
+/* ========== Base Layout ========== */
+
+body {
+    background-color: #FBEEDD;
+    width: 100vw;
+    height: auto;
+    font-family: 'MacysSans', sans-serif;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'MacysSans';
+    src: url('./Contents/MacysSans-Light.otf') format('opentype'),
+        url('./Contents/MacysSans-Micro.otf') format('opentype'),
+        url('./Contents/MacysSans.otf') format('opentype'),
+        url('./Contents/TT Ramillas Trial Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ========== Typography ========== */
+
+h1 {
+    font-family: 'MacysSans';
+    color: black;
+    font-weight: bold;
+}
+
+/* ========== Home Navigation Star ========== */
+
+#PStar {
+    position: absolute;
+    width: 60vh;
+    height: auto;
+    z-index: 1;
+    transition: transform 0.4s ease-in-out;
+}
+
+#FP {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    visibility: hidden;
+}
+
+#FP span {
+    color: white;
+    font-family: 'MacysSans';
+    font-weight: bold;
+    font-size: 35px;
+}
+
+#PStar:hover>#FP {
+    visibility: inherit;
+}
+
+/* ========== Pillar Button Wrapper ========== */
+
+#FPB-Wrapper {
+    background-color: #FBEEDD;
+    position: absolute;
+    top: 85vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 10;
+}
+
+.button {
+    font-family: 'MacysSans';
+    font-weight: bold;
+    font-size: large;
+    background-color: rgb(189, 17, 17);
+    color: white;
+    width: 15vw;
+    height: 8vw;
+
+    border-color: gold;
+    border-radius: 16px;
+}
+
+/* ========== Text Boxes for Pillars ========== */
+
+.textbox {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: black;
+
+    width: 50vw;
+    max-height: 70vh;
+    left: 55vw;
+
+    margin-top: 15vh;
+    padding-left: 50px;
+    padding-bottom: 100px;
+    /* space for fixed footer */
+
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+}
+
+/* ========== Gallery Grid ========== */
+
+.gallery-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 10vh;
+    padding-bottom: 100px;
+    /* space for fixed footer */
+}
+
+.gallery-item {
+    flex: 0 0 calc(25% - 16px);
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 90%;
+    height: 200px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.caption {
+    padding: 12px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* ========== Responsive Columns ========== */
+
+@media (max-width: 1024px) {
+    .gallery-item {
+        flex: 0 0 calc(33.333% - 16px);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 0 0 calc(50% - 16px);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 0 0 100%;
+    }
+}
+
+/* ========== Modal Viewer ========== */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 80%;
+    width: 60%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: scaleIn 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal-img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 28px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ========== Fixed Footer Navigation ========== */
+
+#Navigator-Wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    background-color: rgba(245, 245, 245, 0.7);
+    /* semi-transparent background */
+    padding: 10px;
+    z-index: 100;
+}
+
+
+.Navigator {
+    font-family: 'MacysSans';
+    font-weight: bold;
+    font-size: large;
+    background-color: rgb(241, 62, 62);
+    color: white;
+    width: 15vw;
+    height: 40px;
+
+    border-color: gold;
+    border-radius: 16px;
+}
