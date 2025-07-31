@@ -1,0 +1,488 @@
+html,
+body {
+    font-family: 'MacysSans';
+    background-color: #FBEEDD;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    
+}
+
+
+#startup {
+    background-color: #FBEEDD;
+
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 3s ease;
+
+}
+
+#startup.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    /* Prevent interactions after fade */
+
+}
+
+
+
+/* Define the animation keyframes */
+@keyframes pulseScale {
+
+    0%,
+    100% {
+        transform: scale(0.8)rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.2)rotate(90deg);
+    }
+}
+
+#Loading {
+
+    position: absolute;
+    top: 35vh;
+}
+
+
+
+@font-face {
+    font-family: 'MacysSans';
+    src: url('./Contents/MacysSans-Light.otf') format('opentype'),
+        url('./Contents/MacysSans-Micro.otf') format('opentype'),
+        url('./Contents/MacysSans.otf') format('opentype'),
+        url('./Contents/TT\ Ramillas\ Trial\ Regular.ttf') format('ttf');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+#header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    /* optional spacing */
+}
+
+#header img {
+    height: 150px;
+}
+
+
+
+#everything {
+  height: 95vh;
+  width: 100vw;
+    transform-origin: center;
+    transition: transform 0.2s ease;
+   
+}
+
+
+/* Below are floating elements */
+
+#BigStar {
+
+    position: absolute;
+    z-index: 50;
+    width: 25vw;
+    transform: rotate(-20deg);
+}
+
+#FP {
+
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    visibility: hidden;
+}
+
+#FP span {
+
+    color: white;
+    font-family: 'MacysSans';
+    font-weight: bold;
+}
+
+
+#BigStar:hover {
+    animation: pulseScale 2s ease-in-out infinite;
+    transform-origin: center;
+
+}
+
+
+#BigStar:hover>#FP {
+    visibility: inherit;
+
+}
+
+
+
+
+#ticket {
+
+    position: absolute;
+    z-index: 50;
+    width: 25vw;
+    top:195vw;
+    right: 5vw;
+    transform: rotate(-40deg);
+}
+
+
+
+#frame {
+    width: 80vw;
+    height: 180vw;
+    overflow: hidden;
+    position: relative;
+    
+    margin: 50px auto;
+    cursor: default;
+    user-select: none;
+    /* prevents text selection while dragging */
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: center center;
+    transition: transform 0.2s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#background img {
+    width: 80vw;
+    height: auto;
+    pointer-events: none;
+}
+
+#HSQ img {
+
+    position: absolute;
+    width: 120vw;
+    height: auto;
+    padding-top: 115vw;
+
+    z-index: -10;
+    pointer-events: auto;
+}
+
+
+
+
+
+
+
+
+#MacyS {
+    position: absolute;
+    top: 25vh;
+    width: 150px;
+    height: 220px;
+    z-index: 10;
+    --star-size: 100px;
+
+    width: var(--star-size);
+    height: var(--star-size);
+    background: rgb(221, 23, 23);
+    clip-path: polygon(50% 0%,
+            61% 35%,
+            98% 35%,
+            68% 57%,
+            79% 91%,
+            50% 70%,
+            21% 91%,
+            32% 57%,
+            2% 35%,
+            39% 35%);
+
+
+}
+
+.star {
+    animation: pulseScale 1.5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+
+
+
+
+
+
+/*Below are balloon Styles*/
+
+
+
+#spiderman img {
+    position: absolute;
+    top: 96vw;
+    left: 5vw;
+    z-index: 15;
+
+
+    max-width: 20vw;
+    height: auto;
+
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+}
+
+
+#Gabby img {
+    position: absolute;
+    top: 63vw;
+    left: 30vw;
+    z-index: 15;
+
+
+    max-width: 13vw;
+    height: auto;
+
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+}
+
+
+
+#Marshall img {
+    position: absolute;
+    top: 85
+    vw;
+    right: 10vw;
+    z-index: 15;
+    max-width: 15vw;
+    height: auto;
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+}
+
+#Pikachu_Evee img {
+    position: absolute;
+    top: 6vw;
+    right: 28vw;
+    z-index: 15;
+    max-width: 15vw;
+    height: auto;
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+}
+
+#Noorah img {
+    position: absolute;
+    top: 18vw;
+    left: 25vw;
+    z-index: 15;
+    max-width: 10vw;
+    height: auto;
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+}
+
+
+#Haribo img {
+    position: absolute;
+    top: 18vw;
+    left: 5vw;
+    z-index: 15;
+    max-width: 13vw;
+    height: auto;
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+}
+
+
+
+
+
+.Balloon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Balloon>img,
+.Event>img {
+    width: 150px;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    pointer-events: auto;
+}
+
+/* Zoom on hover */
+.Balloon>img:hover,
+.Event>img:hover {
+    transform: scale(1.55);
+}
+
+/* Caption styling (corrected class names) */
+.balloon-text,
+.Event-text {
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: 'MacysSans', sans-serif;
+    font-size: 0.1rem;
+    background: rgba(255, 224, 195, 0.95);
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    margin-top: 6px;
+    pointer-events: none;
+    user-select: none;
+    z-index: 20;
+}
+
+
+
+/* Below are Star Items*/
+
+#Event1 img{
+ position: absolute;
+    top: 145vw;
+    left: 5vw;
+    z-index: 15;
+    max-width: 10vw;
+    height: auto;
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+
+}
+
+
+#Event2 img{
+ position: absolute;
+    top: 98vw;
+    left: 65vw;
+    z-index: 15;
+    max-width: 8vw;
+    height: auto;
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+
+}
+
+#Event3 img{
+ position: absolute;
+    top: 135vw;
+    left: 60vw;
+    z-index: 15;
+    max-width: 10vw;
+    height: auto;
+    
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+
+}
+
+
+#Event4 img{
+ position: absolute;
+    top: 160vw;
+    left: 30vw;
+    z-index: 15;
+    max-width: 10vw;
+    height: auto;
+    
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+
+}
+
+
+
+
+
+.Event:hover {
+    translate: scale(1.1);       
+   
+}
+
+
+
+/*Below are Display modal */
+
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #FBEEDD;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 80%;
+    width: 60%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: scaleIn 0.8s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal-img {
+    
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 28px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
